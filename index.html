@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ВОИР Республики Башкортостан — Всероссийское общество изобретателей и рационализаторов</title>
+  <meta name="description" content="Официальный лендинг ВОИР Башкортостан. г. Уфа, ул. Космонавтов, д. 1. Телефон: +7 (917) 783-28-91. Группа ВКонтакте: https://vk.ru/02voir. Помощь изобретателям: патенты, гранты, внедрение.">
+  <meta property="og:title" content="ВОИР Башкортостан — Создавай и внедряй изобретения">
+  <meta property="og:description" content="Патентная поддержка, гранты и выход на предприятия для изобретателей Республики Башкортостан.">
+  <meta property="og:image" content="assets/voir_logo.png">
+  <link rel="shortcut icon" href="assets/voir_emblem.png" type="image/png">
+
+  <!-- Google Fonts: Montserrat (Official font of voir-russia.ru) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --voir-navy: #081e5a;
+      --voir-navy-dark: #05143d;
+      --voir-navy-light: #102d7e;
+      --voir-royal: #2d469a;
+      --voir-blue: #3b82f6;
+      --voir-accent: #6e95d0;
+      --voir-accent-hover: #5580bf;
+      --voir-bg-light: #edf0f5;
+      --voir-text-main: #0f172a;
+      --voir-text-muted: #475569;
+      --voir-border: #dbe2ec;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+      --shadow-sm: 0 2px 8px rgba(8, 30, 90, 0.06);
+      --shadow-md: 0 8px 24px rgba(8, 30, 90, 0.08);
+      --shadow-lg: 0 16px 36px rgba(8, 30, 90, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 16px;
+      line-height: 1.55;
+      color: var(--voir-text-main);
+      background: #f8fafc;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-family: inherit;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Верхняя статусная строка */
+    .top-status {
+      background: var(--voir-navy-dark);
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 12px;
+      font-weight: 500;
+      padding: 7px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .top-status-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .status-badge span.dot {
+      width: 7px;
+      height: 7px;
+      background-color: #22c55e;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #22c55e;
+    }
+
+    .top-status-links {
+      display: flex;
+      gap: 18px;
+    }
+
+    .top-status-links a:hover {
+      color: var(--voir-accent);
+    }
+
+    /* Шапка */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--voir-border);
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(8, 30, 90, 0.04);
+    }
+
+    .header-inner {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-box img {
+      height: 46px;
+      width: auto;
+      display: block;
+    }
+
+    .brand-text h1 {
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--voir-navy);
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+      margin: 0;
+    }
+
+    .brand-text span {
+      font-size: 11px;
+      color: var(--voir-text-muted);
+      font-weight: 600;
+      display: block;
+      margin-top: 2px;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header-phone {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--voir-navy);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      background: var(--voir-bg-light);
+      border: 1px solid var(--voir-border);
+    }
+
+    .header-phone:hover {
+      background: #e2e8f0;
+      color: var(--voir-royal);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 20px;
+      font-size: 14px;
+      font-weight: 700;
+      border-radius: 10px;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--voir-navy);
+      color: #ffffff;
+      border: 1px solid var(--voir-navy);
+      box-shadow: 0 4px 14px rgba(8, 30, 90, 0.2);
+    }
+
+    .btn-primary:hover {
+      background: var(--voir-navy-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(8, 30, 90, 0.3);
+    }
+
+    .btn-outline {
+      background: #ffffff;
+      color: var(--voir-navy);
+      border: 1px solid var(--voir-border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--voir-navy);
+      background: var(--voir-bg-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-accent {
+      background: var(--voir-accent);
+      color: #ffffff;
+      border: 1px solid var(--voir-accent);
+    }
+
+    .btn-accent:hover {
+      background: var(--voir-accent-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-max {
+      background: #0284c7;
+      color: #ffffff;
+      padding: 8px 15px;
+      font-size: 13.5px;
+      border-radius: var(--radius-sm);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+    }
+
+    .btn-max:hover {
+      background: #0369a1;
+      transform: translateY(-2px);
+    }
+
+    .btn-vk {
+      background: #0077ff;
+      color: #ffffff;
+      padding: 8px 15px;
+      font-size: 13.5px;
+      border-radius: var(--radius-sm);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 800;
+    }
+
+    .btn-vk:hover {
+      background: #0066dc;
+      transform: translateY(-2px);
+    }
+
+    /* HERO СЕКЦИЯ */
+    .hero {
+      position: relative;
+      background: radial-gradient(circle at 80% 20%, rgba(110, 149, 208, 0.18) 0%, rgba(237, 240, 245, 0.6) 60%, #ffffff 100%);
+      padding: 48px 0 52px;
+      border-bottom: 1px solid var(--voir-border);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.18fr 0.82fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 12px;
+      background: #ffffff;
+      border: 1px solid var(--voir-border);
+      border-radius: 20px;
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--voir-navy);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero-title {
+      font-size: clamp(34px, 4.2vw, 48px);
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--voir-navy);
+      letter-spacing: -1.4px;
+      margin-bottom: 16px;
+    }
+
+    .hero-title span {
+      background: linear-gradient(120deg, var(--voir-navy) 0%, var(--voir-royal) 60%, var(--voir-blue) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--voir-text-muted);
+      margin-bottom: 24px;
+      max-width: 580px;
+    }
+
+    .hero-address-highlight {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ffffff;
+      border: 1px solid var(--voir-border);
+      border-radius: var(--radius-sm);
+      padding: 8px 14px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--voir-navy);
+      margin-bottom: 24px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .hero-stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      padding-top: 20px;
+      border-top: 1px solid var(--voir-border);
+    }
+
+    .stat-card b {
+      display: block;
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--voir-navy);
+      line-height: 1.1;
+    }
+
+    .stat-card span {
+      font-size: 11.5px;
+      color: var(--voir-text-muted);
+      font-weight: 600;
+      line-height: 1.3;
+      display: block;
+      margin-top: 3px;
+    }
+
+    .hero-media {
+      position: relative;
+    }
+
+    .hero-media-box {
+      background: #ffffff;
+      border: 1px solid var(--voir-border);
+      border-radius: var(--radius-xl);
+      padding: 12px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-media-box img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: var(--radius-md);
+      display: block;
+    }
+
+    .hero-media-tag {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      right: 24px;
+      background: rgba(8, 30, 90, 0.92);
+      backdrop-filter: blur(8px);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hero-media-tag h4 {
+      font-size: 13.5px;
+      font-weight: 800;
+      margin-bottom: 2px;
+    }
+
+    .hero-media-tag p {
+      font-size: 11.5px;
+      color: rgba(255, 255, 255, 0.8);
+      margin: 0;
+    }
+
+    /* БЛОК ДЛЯ ОПЫТНЫХ ИЗОБРЕТАТЕЛЕЙ / НАСТАВНИКОВ */
+    .mentor-section {
+      padding: 44px 0;
+      background: linear-gradient(135deg, var(--voir-navy) 0%, #112c75 100%);
+      color: #ffffff;
+    }
+
+    .mentor-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .mentor-lead {
+      max-width: 720px;
+    }
+
+    .mentor-lead h2 {
+      font-size: clamp(23px, 2.6vw, 32px);
+      font-weight: 900;
+      letter-spacing: -0.8px;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .mentor-lead p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.88);
+      margin: 0;
+    }
+
+    .mentor-action {
+      flex-shrink: 0;
+    }
+
+    /* БЛОК ПРЕИМУЩЕСТВ (4 КЛЮЧЕВЫЕ КАРТОЧКИ) */
+    .benefits-section {
+      padding: 50px 0 55px;
+      background: #ffffff;
+      border-bottom: 1px solid var(--voir-border);
+    }
+
+    .section-headline {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 32px;
+    }
+
+    .section-kicker {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--voir-royal);
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: clamp(26px, 3vw, 36px);
+      font-weight: 900;
+      color: var(--voir-navy);
+      letter-spacing: -1px;
+      line-height: 1.2;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .b-card {
+      background: var(--voir-bg-light);
+      border: 1px solid var(--voir-border);
+      border-radius: var(--radius-md);
+      padding: 24px 20px;
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .b-card:hover {
+      background: #ffffff;
+      border-color: var(--voir-royal);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .b-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--voir-navy);
+      color: #ffffff;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+    }
+
+    .b-card h3 {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--voir-navy);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .b-card p {
+      font-size: 13.5px;
+      color: var(--voir-text-muted);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* СЕКЦИЯ ПРЯМОЙ СВЯЗИ И КОНТАКТОВ (ВМЕСТО АНКЕТЫ) */
+    .direct-connect-section {
+      padding: 55px 0;
+      background: var(--voir-bg-light);
+    }
+
+    .split-connect {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    /* Колонка 1: Прямая связь (Замена анкеты) */
+    .callout-card {
+      background: #ffffff;
+      border: 2px solid var(--voir-royal);
+      border-radius: var(--radius-xl);
+      padding: 34px 30px;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .phone-hero-box {
+      background: linear-gradient(135deg, #f0f5ff 0%, #edf2fc 100%);
+      border: 1.5px solid #cbdcf7;
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    .phone-hero-box .phone-label {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--voir-royal);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .phone-hero-box a.phone-big {
+      font-size: clamp(26px, 3.2vw, 36px);
+      font-weight: 900;
+      color: var(--voir-navy);
+      display: inline-block;
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+      transition: color 0.2s ease;
+    }
+
+    .phone-hero-box a.phone-big:hover {
+      color: var(--voir-blue);
+    }
+
+    .phone-hero-box .phone-desc {
+      font-size: 13px;
+      color: var(--voir-text-muted);
+      margin-top: 6px;
+      display: block;
+    }
+
+    .channel-buttons-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .channel-btn {
+      padding: 13px;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-weight: 800;
+      text-align: center;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: #ffffff;
+      transition: all 0.2s ease;
+    }
+
+    .channel-btn.max {
+      background: #0284c7;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+    }
+
+    .channel-btn.max:hover {
+      background: #0369a1;
+      transform: translateY(-2px);
+    }
+
+    .channel-btn.vk {
+      background: #0077ff;
+      box-shadow: 0 4px 12px rgba(0, 119, 255, 0.25);
+    }
+
+    .channel-btn.vk:hover {
+      background: #0066dc;
+      transform: translateY(-2px);
+    }
+
+    .channel-btn.call {
+      grid-column: span 2;
+      background: var(--voir-navy);
+      color: #ffffff;
+      padding: 14px;
+      font-size: 15px;
+      box-shadow: 0 4px 14px rgba(8, 30, 90, 0.2);
+    }
+
+    .channel-btn.call:hover {
+      background: var(--voir-navy-light);
+      transform: translateY(-2px);
+    }
+
+    /* Колонка 2: Контакты и реквизиты */
+    .contacts-card {
+      background: #ffffff;
+      border: 1px solid var(--voir-border);
+      border-radius: var(--radius-xl);
+      padding: 34px 30px;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .contacts-header {
+      margin-bottom: 16px;
+    }
+
+    .contacts-header h2 {
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--voir-navy);
+      letter-spacing: -0.6px;
+      margin-bottom: 6px;
+    }
+
+    .contacts-header p {
+      font-size: 14px;
+      color: var(--voir-text-muted);
+    }
+
+    .contact-item-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 11px 0;
+      border-bottom: 1px dashed var(--voir-border);
+    }
+
+    .c-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      background: var(--voir-navy);
+      display: grid;
+      place-items: center;
+      color: #ffffff;
+      flex-shrink: 0;
+    }
+
+    .c-details h4 {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--voir-text-muted);
+      margin-bottom: 2px;
+    }
+
+    .c-details a, .c-details b {
+      font-size: 15.5px;
+      font-weight: 800;
+      color: var(--voir-navy);
+      display: block;
+    }
+
+    .c-details a:hover {
+      color: var(--voir-royal);
+    }
+
+    .c-details span {
+      font-size: 12px;
+      color: var(--voir-text-muted);
+    }
+
+    .req-box {
+      background: var(--voir-bg-light);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      margin-top: 14px;
+      font-size: 12px;
+      color: var(--voir-text-muted);
+    }
+
+    .req-box b {
+      color: var(--voir-navy);
+    }
+
+    .req-copy-btn {
+      margin-top: 8px;
+      width: 100%;
+      padding: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      background: #ffffff;
+      border: 1px solid var(--voir-border);
+      border-radius: 6px;
+      color: var(--voir-navy);
+      cursor: pointer;
+    }
+
+    .req-copy-btn:hover {
+      background: #e2e8f0;
+    }
+
+    /* КАРТА */
+    .map-section {
+      background: #ffffff;
+      padding: 40px 0 50px;
+      border-bottom: 1px solid var(--voir-border);
+    }
+
+    .map-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .map-wrapper {
+      border: 1px solid var(--voir-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      height: 340px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .map-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* ПОДВАЛ */
+    footer {
+      background: var(--voir-navy-dark);
+      color: rgba(255, 255, 255, 0.8);
+      padding: 30px 0;
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .footer-inner a {
+      color: var(--voir-accent);
+    }
+
+    .footer-inner a:hover {
+      color: #ffffff;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+      .mentor-inner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+      }
+      .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .split-connect {
+        grid-template-columns: 1fr;
+      }
+      .hero-stats-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .top-status-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      /* Шапка */
+      .header-inner {
+        height: 60px;
+        gap: 8px;
+      }
+      .brand-box img {
+        height: 36px;
+      }
+      .brand-text h1 {
+        font-size: 15.5px;
+        letter-spacing: -0.3px;
+      }
+      .brand-text span {
+        display: none;
+      }
+      .header-actions {
+        gap: 6px;
+      }
+      .header-actions .btn-max,
+      .header-actions .btn-vk {
+        display: none;
+      }
+      .header-phone {
+        padding: 8px;
+        gap: 0;
+      }
+      .header-phone span {
+        display: none;
+      }
+      .header-actions .btn-primary {
+        padding: 8px 13px !important;
+        font-size: 13px !important;
+        white-space: nowrap;
+      }
+
+      /* Верхний статус-бар */
+      .top-status {
+        padding: 5px 0;
+        font-size: 10.5px;
+        text-align: center;
+      }
+      .top-status-inner {
+        justify-content: center;
+      }
+      .status-badge {
+        justify-content: center;
+      }
+
+      /* Главный экран */
+      .hero {
+        padding: 24px 0 32px;
+      }
+      .hero-grid {
+        gap: 24px;
+      }
+      .hero-badge {
+        font-size: 10.5px;
+        padding: 4px 10px;
+        margin-bottom: 12px;
+      }
+      .hero-title {
+        font-size: clamp(24px, 7vw, 32px);
+        line-height: 1.15;
+        letter-spacing: -0.6px;
+        margin-bottom: 12px;
+      }
+      .hero-subtitle {
+        font-size: 14.5px;
+        line-height: 1.5;
+        margin-bottom: 16px;
+      }
+      .hero-address-highlight {
+        font-size: 11.5px;
+        padding: 7px 10px;
+        margin-bottom: 18px;
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+      }
+      .hero-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        margin-bottom: 22px;
+      }
+      .hero-actions .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 13px 18px !important;
+        font-size: 14.5px !important;
+      }
+      .hero-stats-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        padding-top: 16px;
+      }
+      .stat-card {
+        padding: 10px 8px;
+        text-align: center;
+      }
+      .stat-card b {
+        font-size: 18px;
+      }
+      .stat-card span {
+        font-size: 10.5px;
+      }
+      .hero-media-box {
+        padding: 8px;
+        border-radius: var(--radius-lg);
+        min-height: 200px;
+        background: linear-gradient(135deg, #0b1e4f, #1a367d);
+      }
+      .hero-media-box img {
+        height: 200px;
+        object-fit: cover;
+      }
+      .hero-media-tag {
+        position: static;
+        margin-top: 10px;
+        padding: 10px 12px;
+        border-radius: var(--radius-md);
+      }
+
+      /* Блок наставников */
+      .mentor-section {
+        padding: 30px 0;
+      }
+      .mentor-inner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+      }
+      .mentor-lead h2 {
+        font-size: clamp(21px, 6vw, 25px);
+        line-height: 1.25;
+        margin-bottom: 8px;
+      }
+      .mentor-lead p {
+        font-size: 13.5px;
+        line-height: 1.5;
+      }
+      .mentor-action {
+        width: 100%;
+      }
+      .mentor-action .btn {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        padding: 13px 16px !important;
+        font-size: 14px !important;
+        white-space: normal;
+      }
+
+      /* Карточки помощи */
+      .benefits-section {
+        padding: 34px 0 38px;
+      }
+      .section-headline {
+        margin-bottom: 20px;
+      }
+      .section-title {
+        font-size: clamp(21px, 6vw, 25px);
+        line-height: 1.2;
+      }
+      .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .b-card {
+        padding: 18px 16px;
+      }
+      .b-card h3 {
+        font-size: 16px;
+      }
+      .b-card p {
+        font-size: 13px;
+      }
+
+      /* Прямая связь и контакты */
+      .direct-connect-section {
+        padding: 34px 0;
+      }
+      .split-connect {
+        gap: 16px;
+      }
+      .callout-card, .contacts-card {
+        padding: 20px 16px !important;
+        border-radius: var(--radius-lg);
+      }
+      .phone-hero-box {
+        padding: 16px 10px;
+        margin: 14px 0;
+      }
+      .phone-hero-box a.phone-big {
+        font-size: clamp(21px, 5.8vw, 26px);
+      }
+      .channel-buttons-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-top: 12px;
+      }
+      .channel-btn {
+        padding: 12px;
+        font-size: 13.5px;
+        width: 100%;
+      }
+      .channel-btn.call {
+        grid-column: span 1;
+        padding: 13px;
+      }
+      .contact-item-row {
+        gap: 10px;
+        padding: 10px 0;
+      }
+      .c-icon {
+        width: 34px;
+        height: 34px;
+      }
+      .c-details a, .c-details b {
+        font-size: 14px;
+        word-break: break-word;
+      }
+      .req-box {
+        padding: 12px;
+        font-size: 11.5px;
+        line-height: 1.45;
+        word-break: break-word;
+      }
+
+      /* Карта */
+      .map-section {
+        padding: 26px 0 32px;
+      }
+      .map-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+      }
+      .map-header .btn {
+        width: 100%;
+        justify-content: center;
+      }
+      .map-wrapper {
+        height: 230px;
+        border-radius: var(--radius-md);
+      }
+
+      /* Подвал */
+      footer {
+        padding: 22px 0;
+        font-size: 12px;
+      }
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .container {
+        padding: 0 14px;
+      }
+      .hero-title {
+        font-size: 24px;
+      }
+      .brand-text h1 {
+        font-size: 14.5px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. СТАТУС-БАР -->
+  <aside class="top-status">
+    <div class="container top-status-inner">
+      <div class="status-badge">
+        <span class="dot"></span>
+        <span>Общероссийская общественно-государственная организация ВОИР</span>
+      </div>
+      <div class="top-status-links">
+        <a href="tel:+79177832891">Отделение РБ: +7 (917) 783-28-91</a>
+        <a href="https://vk.ru/02voir" target="_blank" rel="noopener">ВКонтакте: vk.ru/02voir</a>
+        <a href="https://voir-russia.ru" target="_blank" rel="noopener">voir-russia.ru ↗</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- 2. ШАПКА -->
+  <header>
+    <div class="container header-inner">
+      <div class="brand-box">
+        <img src="assets/voir_emblem.png" alt="ВОИР" onerror="this.src='assets/voir_logo.png'">
+        <div class="brand-text">
+          <h1>ВОИР Башкортостан</h1>
+          <span>г. Уфа, ул. Космонавтов, д. 1</span>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <a href="tel:+79177832891" class="header-phone" aria-label="Позвонить в приемную Уфы">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>+7 (917) 783-28-91</span>
+        </a>
+        <a href="https://max.ru/channel_02voir" target="_blank" rel="noopener" class="btn-max" aria-label="Канал Max">
+          Max
+        </a>
+        <a href="https://vk.ru/02voir" target="_blank" rel="noopener" class="btn-vk" aria-label="ВКонтакте">
+          ВКонтакте
+        </a>
+        <a href="#contacts" class="btn btn-primary">
+          Связаться ↗
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 3. ГЛАВНЫЙ ЭКРАН (HERO) -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-badge">
+            <span style="color:#e11d48;">●</span> Республика Башкортостан · Официальное отделение
+          </div>
+
+          <h2 class="hero-title">
+            Создавай будущее.<br>
+            <span>Внедряй свои изобретения с ВОИР.</span>
+          </h2>
+
+          <p class="hero-subtitle">
+            Помогаем изобретателям, инженерам и ученым Башкортостана запатентовать идею, привлечь гранты и внедрить разработки на промышленных предприятиях региона.
+          </p>
+
+          <div class="hero-address-highlight">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>г. Уфа, ул. Космонавтов, д. 1 · Приёмная отделения</span>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#contacts" class="btn btn-primary" style="padding: 14px 28px; font-size: 15px;">
+              Стать частью ВОИР ↗
+            </a>
+            <a href="tel:+79177832891" class="btn btn-outline" style="padding: 14px 24px; font-size: 15px;">
+              Позвонить в отделение
+            </a>
+          </div>
+
+          <div class="hero-stats-row">
+            <div class="stat-card">
+              <b>90+ лет</b>
+              <span>истории общества</span>
+            </div>
+            <div class="stat-card">
+              <b>75+</b>
+              <span>регионов в сети</span>
+            </div>
+            <div class="stat-card">
+              <b>10 000+</b>
+              <span>внедрённых решений</span>
+            </div>
+            <div class="stat-card">
+              <b>100 000+</b>
+              <span>Более 100 тысяч человек</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-media">
+          <div class="hero-media-box">
+            <img src="assets/hero_voir.jpeg" alt="Изобретатели ВОИР" onerror="this.src='assets/voir_logo.png'">
+          </div>
+          <div class="hero-media-tag">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <div>
+              <h4>Инновации Республики Башкортостан</h4>
+              <p>Патентный поиск, защита прав, акселерация и содействие внедрению.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. БЛОК ДЛЯ ОПЫТНЫХ ИЗОБРЕТАТЕЛЕЙ / НАСТАВНИКОВ -->
+    <section class="mentor-section">
+      <div class="container mentor-inner">
+        <div class="mentor-lead">
+          <div style="font-size: 11.5px; font-weight:800; text-transform:uppercase; letter-spacing:1px; color:var(--voir-accent); margin-bottom:6px;">Опыт, который нужен региону</div>
+          <h2>Уже прошли этот путь?<br>Ваш опыт нужен ВОИР</h2>
+          <p>
+            Если за вашими плечами реализованные проекты, патенты и преодоленные сложности — помогите тем, кто только начинает. Станьте наставником или экспертом общества в Башкортостане.
+          </p>
+        </div>
+        <div class="mentor-action">
+          <a href="#contacts" class="btn btn-accent" style="padding: 12px 24px; font-size: 14px;">
+            Поделиться опытом / Стать наставником ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. ЧЕМ МЫ ПОМОГАЕМ (4 КОМПАКТНЫЕ КАРТОЧКИ) -->
+    <section class="benefits-section">
+      <div class="container">
+        <div class="section-headline">
+          <div class="section-kicker">Реальная помощь</div>
+          <h2 class="section-title">Что вы получаете в ВОИР Башкортостан</h2>
+        </div>
+
+        <div class="benefits-grid">
+          <!-- 1 -->
+          <div class="b-card">
+            <div class="b-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Защита патента и прав</h3>
+            <p>Первичная экспертиза новизны, оформление заявок в Роспатент и защита от незаконного копирования.</p>
+          </div>
+
+          <!-- 2 -->
+          <div class="b-card">
+            <div class="b-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3>Гранты и инвестиции</h3>
+            <p>Подготовка проектов под критерии программ «УМНИК», «Старт», грантов Главы РБ и фонда Сколково.</p>
+          </div>
+
+          <!-- 3 -->
+          <div class="b-card">
+            <div class="b-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h3>ЦМИТ и прототипы</h3>
+            <p>Доступ к 3D-печати, станкам ЧПУ и мастерским FabLab в Башкортостане для сборки первого образца.</p>
+          </div>
+
+          <!-- 4 -->
+          <div class="b-card">
+            <div class="b-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Внедрение на заводах</h3>
+            <p>Прямой контакт с главными инженерами предприятий машиностроения, нефти и химии РБ.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. ПРЯМАЯ СВЯЗЬ: НОМЕР + MAX + VK + КОНТАКТЫ (БЕЗ АНКЕТЫ) -->
+    <section class="direct-connect-section" id="contacts">
+      <div class="container split-connect">
+        
+        <!-- КОЛОНКА 1: ПРЯМАЯ СВЯЗЬ (ВМЕСТО АНКЕТЫ) -->
+        <div class="callout-card">
+          <div>
+            <div class="section-kicker">Прямая связь</div>
+            <h2 style="font-size: 24px; font-weight: 900; color: var(--voir-navy); letter-spacing: -0.6px; margin-bottom: 6px;">
+              Связаться с отделением
+            </h2>
+            <p style="font-size: 14px; color: var(--voir-text-muted);">
+              Позвоните напрямую для консультации по патентам, грантам и проектам, либо перейдите в группу MAX или сообщество ВКонтакте.
+            </p>
+
+            <!-- ГЛАВНЫЙ БЛОК ТЕЛЕФОНА -->
+            <div class="phone-hero-box">
+              <span class="phone-label">Телефон регионального отделения</span>
+              <a href="tel:+79177832891" class="phone-big">+7 (917) 783-28-91</a>
+              <span class="phone-desc">Звонки и консультации экспертов ВОИР РБ</span>
+            </div>
+
+            <!-- КНОПКИ ДЕЙСТВИЯ: ЗВОНОК + MAX + ВКОНТАКТЕ -->
+            <div class="channel-buttons-grid">
+              <a href="tel:+79177832891" class="channel-btn call">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                Позвонить: +7 (917) 783-28-91
+              </a>
+              <a href="https://max.ru/channel_02voir" target="_blank" rel="noopener" class="channel-btn max">
+                Канал MAX ↗
+              </a>
+              <a href="https://vk.ru/02voir" target="_blank" rel="noopener" class="channel-btn vk">
+                ВКонтакте: vk.ru/02voir ↗
+              </a>
+            </div>
+          </div>
+
+          <div style="margin-top: 20px; padding-top: 16px; border-top: 1px dashed var(--voir-border); font-size: 13px; color: var(--voir-text-muted); text-align: center;">
+            Приём граждан и консультации: <b>Пн–Пт с 09:00 до 18:00</b>
+          </div>
+        </div>
+
+        <!-- КОЛОНКА 2: КОНТАКТЫ И ОФИЦИАЛЬНЫЕ РЕКВИЗИТЫ -->
+        <div class="contacts-card">
+          <div>
+            <div class="contacts-header">
+              <div class="section-kicker">Официально</div>
+              <h2>Реквизиты и адрес</h2>
+              <p>Адрес отделения в Башкортостане и официальные данные.</p>
+            </div>
+
+            <!-- Адрес Уфа: ул. Космонавтов, д. 1 -->
+            <div class="contact-item-row">
+              <div class="c-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="c-details">
+                <h4>Приёмная отделения в г. Уфа</h4>
+                <b>г. Уфа, ул. Космонавтов, д. 1</b>
+                <span>Личный приём по предварительной записи</span>
+              </div>
+            </div>
+
+            <!-- Телефон отделения: +7 917 783 2891 -->
+            <div class="contact-item-row">
+              <div class="c-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div class="c-details">
+                <h4>Телефон приёмной</h4>
+                <a href="tel:+79177832891">+7 (917) 783-28-91</a>
+                <span>Прямая связь с экспертами</span>
+              </div>
+            </div>
+
+            <!-- E-mail & ВКонтакте -->
+            <div class="contact-item-row">
+              <div class="c-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="c-details">
+                <h4>Электронная почта и группа</h4>
+                <a href="mailto:rb@voir-russia.ru" style="color:var(--voir-royal);">rb@voir-russia.ru</a>
+                <a href="https://vk.ru/02voir" target="_blank" rel="noopener" style="font-size:13px; color:#0077ff; margin-top:2px; font-weight:700;">vk.ru/02voir ↗</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Реквизиты -->
+          <div class="req-box">
+            <div><b>Организация:</b> ВОИР Республики Башкортостан</div>
+            <div><b>Адрес:</b> г. Уфа, ул. Космонавтов, д. 1</div>
+            <div><b>ОГРН:</b> 1027739198642 | <b>ИНН:</b> 7704044550</div>
+            <div><b>Центральный аппарат (Москва):</b> Бережковская наб., 24, оф. 23</div>
+            <button class="req-copy-btn" onclick="copyReqs()">Скопировать реквизиты отделения</button>
+            <div id="copyAlert" style="display:none; color:#059669; font-weight:700; text-align:center; margin-top:4px;">✓ Реквизиты скопированы!</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. КАРТА ПО АДРЕСУ: г. Уфа, ул. Космонавтов, д. 1 -->
+    <section class="map-section">
+      <div class="container">
+        <div class="map-header">
+          <div>
+            <strong style="color:var(--voir-navy); font-size:16px;">Схема расположения отделения</strong>
+            <div style="font-size:13px; color:var(--voir-text-muted); margin-top:2px;">г. Уфа, ул. Космонавтов, д. 1</div>
+          </div>
+          <a href="https://yandex.ru/maps/?text=%D0%B3.%20%D0%A3%D1%84%D0%B0%2C%20%D1%83%D0%BB.%20%D0%9A%D0%BE%D1%81%D0%BC%D0%BE%D0%BD%D0%B0%D0%B2%D1%82%D0%BE%D0%B2%2C%20%D0%B4.%201" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 7px 14px; font-size: 13px;">
+            Открыть в Яндекс Картах ↗
+          </a>
+        </div>
+        <div class="map-wrapper">
+          <iframe src="https://yandex.ru/map-widget/v1/?text=%D0%B3.%20%D0%A3%D1%84%D0%B0%2C%20%D1%83%D0%BB.%20%D0%9A%D0%BE%D1%81%D0%BC%D0%BE%D0%BD%D0%B0%D0%B2%D1%82%D0%BE%D0%B2%2C%20%D0%B4.%201&z=16" loading="lazy" title="Карта ВОИР г. Уфа, ул. Космонавтов, д. 1"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 8. ПОДВАЛ -->
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <b>ВОИР · Региональное отделение Республики Башкортостан</b><br>
+        <span style="color:rgba(255,255,255,0.6);">г. Уфа, ул. Космонавтов, д. 1 · Телефон: +7 (917) 783-28-91</span>
+      </div>
+      <div style="display:flex; gap:16px;">
+        <a href="https://vk.ru/02voir" target="_blank" rel="noopener">ВКонтакте: vk.ru/02voir</a>
+        <a href="https://voir-russia.ru" target="_blank" rel="noopener">voir-russia.ru ↗</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Копирование реквизитов
+    function copyReqs() {
+      const text = `Общероссийская общественно-государственная организация «Всероссийское общество изобретателей и рационализаторов» (ВОИР)
+Региональное отделение: Республика Башкортостан
+Адрес отделения: г. Уфа, ул. Космонавтов, д. 1
+Телефон приемной: +7 (917) 783-28-91
+Email: rb@voir-russia.ru
+Группа ВКонтакте: https://vk.ru/02voir
+ОГРН: 1027739198642
+ИНН: 7704044550
+КПП: 770401001
+Центральный аппарат (Москва): +7 (958) 146-95-57, Бережковская наб., д. 24, оф. 23
+Официальный сайт: https://voir-russia.ru`;
+
+      navigator.clipboard.writeText(text).then(() => {
+        const el = document.getElementById('copyAlert');
+        el.style.display = 'block';
+        setTimeout(() => el.style.display = 'none', 3000);
+      });
+    }
+  </script>
+</body>
+</html>
